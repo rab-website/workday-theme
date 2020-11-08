@@ -1,0 +1,24 @@
+{
+  "name": "rab-script",
+  "version": "1.0.0",
+  "description": "A script that runs menu-specific javascript when the site is rendered",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-minify": "^0.2.0",
+    "prop-types": "^15.7.2",
+    "uglifyjs-webpack-plugin": "^1.1.8",
+    "webpack": "^3.10.0",
+    "minify": "6.0.1"
+  },
+  "scripts": {
+    "build": "webpack && npm run minify-css",
+    "minify-css": "minify src/style.css > build/dist/style.min.css",
+    "write-js": "cp src/scripts.js ../themes/checathlon/assets/js && cp build/dist/scripts.min.js ../themes/checathlon/assets/js/",
+    "write-css": "cp src/style.css ../themes/checathlon/ && cp build/dist/style.min.css ../themes/checathlon/"
+  }
+}
