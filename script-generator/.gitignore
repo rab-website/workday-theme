@@ -1,0 +1,9 @@
+node_modules
+
+*.log
+dist
+
+.DS_Store
+
+#Ignore package-lock.json, since people can be pulling from different npm repositories.
+package-lock.json
